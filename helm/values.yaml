@@ -22,8 +22,8 @@ chartmuseum:
       ingress.kubernetes.io/ssl-redirect: "false"
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
     hosts:
-      cm.172.128.18.111.nip.io: # Change me!
-      - /
+      - name: cm.172.128.18.111.nip.io
+        path: / 
 
 jenkins:
   controller:
@@ -71,7 +71,7 @@ jenkins:
     SecretsFilesSecret: jenkins-secrets
     DockerVM: false
   rbac:
-    install: true
+    create: true
 go-demo-5:
   ingress:
     host: go-demo-5.34.210.146.155.nip.io
