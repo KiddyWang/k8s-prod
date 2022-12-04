@@ -22,11 +22,11 @@ chartmuseum:
       ingress.kubernetes.io/ssl-redirect: "false"
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
     hosts:
-      cm.34.210.146.155.nip.io: # Change me!
+      cm.172.128.18.111.nip.io: # Change me!
       - /
 
 jenkins:
-  Master:
+  controller:
     ImageTag: "2.129-alpine"
     Cpu: "500m"
     Memory: "500Mi"
@@ -35,29 +35,28 @@ jenkins:
       service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     GlobalLibraries: true
     InstallPlugins:
-    - durable-task:1.22
-    - workflow-durable-task-step:2.19
-    - blueocean:1.7.1
-    - credentials:2.1.18
-    - ec2:1.39
-    - git:3.9.1
-    - git-client:2.7.3
-    - github:1.29.2
-    - kubernetes:1.12.3
-    - pipeline-utility-steps:2.1.0
-    - pipeline-model-definition:1.3.1
-    - script-security:1.44
-    - slack:2.3
-    - thinBackup:1.9
-    - workflow-aggregator:2.5
-    - ssh-slaves:1.26
-    - ssh-agent:1.15
-    - jdk-tool:1.1
-    - command-launcher:1.2
-    - github-oauth:0.29
-    - google-compute-engine:1.0.4
+    - configuration-as-code:1559.v38a_b_2e3b_6b_b_7
+    - durable-task:501.ve5d4fc08b0be
+    - workflow-durable-task-step:1217.v38306d8fa_b_5c
+    - blueocean:1.25.8
+    - credentials:1214.v1de940103927
+    - git:4.14.0
+    - git-client:3.13.0    
+    - kubernetes:3734.v562b_b_a_627ea_c
+    - pipeline-utility-steps:2.14.0
+    - pipeline-model-definition:2.2118.v31fd5b_9944b_5
+    - slack:631.v40deea_40323b
+    - thinBackup:1.13
+    - workflow-aggregator:590.v6a_d052e5a_a_b_5
+    - ssh-slaves:2.854.v7fd446b_337c9
+    - ssh-agent:295.v9ca_a_1c7cc3a_a_
+    - jdk-tool:63.v62d2fd4b_4793
+    - command-launcher:90.v669d7ccb_7c31
+    - github-oauth:0.39
+    - google-compute-engine:4.3.12
     - pegdown-formatter:1.3
     Ingress:
+      enabled: true
       Annotations:
         kubernetes.io/ingress.class: "nginx"
         nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -66,7 +65,7 @@ jenkins:
         ingress.kubernetes.io/ssl-redirect: "false"
         ingress.kubernetes.io/proxy-body-size: 50m
         ingress.kubernetes.io/proxy-request-buffering: "off"
-    HostName: jenkins.34.210.146.155.nip.io # Change me!
+    HostName: jenkins.172.128.18.111.nip.io # Change me!
     CustomConfigMap: true
     CredentialsXmlSecret: jenkins-credentials
     SecretsFilesSecret: jenkins-secrets

@@ -1,7 +1,8 @@
 dependencies:
 - name: chartmuseum
-  repository: "@stable"
-  version: 1.6.0
+  repository: "https://chartmuseum.github.io/charts"
+  version: 3.9.2
 - name: jenkins
-  repository: "@stable"
-  version: 0.16.20
+  repository: "https://charts.jenkins.io/"
+  version: 4.2.15
+

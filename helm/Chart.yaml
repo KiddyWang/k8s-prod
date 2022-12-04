@@ -3,5 +3,5 @@ name: prod-env
 version: 0.0.1
 description: Production Environment
 maintainers:
-- name: Viktor Farcic
-  email: viktor@farcic.com
+- name: Kiddy Wang
+  email: flesh222@163.com
